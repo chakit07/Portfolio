@@ -1,15 +1,29 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const VALID_TOKENS = ["abc123", "xyz456", "mysecretkey"]; // 🔑 Approved tokens
 
 const Resume = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+  const [isApproved, setIsApproved] = useState(false);
+
+  useEffect(() => {
+    // Check URL for token
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("token");
+
+    if (token && VALID_TOKENS.includes(token)) {
+      setIsApproved(true);
+    }
+  }, []);
 
   return (
     <section
       id="resume"
       className="min-h-screen flex flex-col items-center justify-center px-6 md:px-20 py-16"
     >
+      {/* Title */}
       <motion.h2
         className="text-4xl font-extrabold text-center mb-10
                    bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent"
@@ -21,7 +35,7 @@ const Resume = () => {
         🔒 Resume
       </motion.h2>
 
-      {/* Blurred Resume Preview */}
+      {/* Main Resume Card */}
       <motion.div
         className="bg-white/30 dark:bg-gray-800/40 rounded-2xl shadow-2xl border border-white/20
                    backdrop-blur-lg overflow-hidden max-w-3xl w-full p-6 text-center"
@@ -29,33 +43,22 @@ const Resume = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        whileHover={{ scale: 1.02, rotate: -0.5 }}
-        whileTap={{ scale: 0.98, rotate: 0 }}
       >
-        <motion.div
-          initial={{ y: 0 }}
-          animate={{ y: [0, -8, 0] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="relative"
-        >
-          <img
-            src="Preview.png"
-            alt="Resume Preview"
-            className="w-full h-[500px] object-cover rounded-xl blur-sm opacity-80"
-          />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <p className="text-gray-700 dark:text-gray-200 font-semibold text-lg drop-shadow-md">
-              🔐 Encrypted – Preview Only
-            </p>
-          </div>
-        </motion.div>
+        <img
+          src="Preview.png"
+          alt="Resume Preview"
+          className="w-full h-[500px] object-cover rounded-xl blur-sm opacity-80"
+        />
 
         <p className="text-gray-600 dark:text-gray-300 mt-6">
-          You can <b>preview</b> my resume here. If you’d like to{" "}
-          <b>download</b> it, please request permission below 👇
+          {isApproved
+            ? "✅ You are authorized. Click below to download my resume."
+            : "You can preview my resume here. Request permission to download 👇"}
         </p>
 
+        {/* Buttons */}
         <div className="flex justify-center gap-6 mt-6 flex-wrap">
+          {/* Preview Button */}
           <button
             onClick={() => setIsPreviewOpen(true)}
             className="px-6 py-2 rounded-full bg-cyan-500 hover:bg-cyan-600
@@ -64,17 +67,29 @@ const Resume = () => {
             Preview Resume
           </button>
 
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="px-6 py-2 rounded-full bg-blue-500 hover:bg-blue-600
-                       text-white font-semibold shadow-lg transition-colors"
-          >
-            Request Download
-          </button>
+          {/* Conditional Button */}
+          {isApproved ? (
+            <a
+              href="/Chakit_Resume.pdf"
+              download="Chakit_Resume.pdf"
+              className="px-6 py-2 rounded-full bg-green-500 hover:bg-green-600
+                         text-white font-semibold shadow-lg transition-colors"
+            >
+              Download Resume
+            </a>
+          ) : (
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="px-6 py-2 rounded-full bg-blue-500 hover:bg-blue-600
+                         text-white font-semibold shadow-lg transition-colors"
+            >
+              Request Download
+            </button>
+          )}
         </div>
       </motion.div>
 
-      {/* Modal for Download Request */}
+      {/* 🔹 Request Form Modal */}
       <AnimatePresence>
         {isModalOpen && (
           <motion.div
@@ -101,7 +116,7 @@ const Resume = () => {
                 Request Resume Access
               </h3>
               <p className="text-gray-700 dark:text-gray-300 mb-6">
-                Fill in your details and reason. I’ll receive your request at{" "}
+                Fill in your details. I’ll receive your request at{" "}
                 <b>chakitsharma7@gmail.com</b>.
               </p>
 
@@ -148,7 +163,7 @@ const Resume = () => {
         )}
       </AnimatePresence>
 
-      {/* Full Preview Modal */}
+      {/* 🔹 Full Preview Modal */}
       <AnimatePresence>
         {isPreviewOpen && (
           <motion.div
