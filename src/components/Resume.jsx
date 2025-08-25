@@ -1,12 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const VALID_TOKENS = ["abc123", "xyz456", "mysecretkey"]; // 🔑 Approved tokens
+const VALID_TOKENS = ["Goodtoknow", "Thanks", "chakit07"]; // 🔑 approved users
 
 const Resume = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     // Check URL for token
@@ -120,10 +121,12 @@ const Resume = () => {
                 <b>chakitsharma7@gmail.com</b>.
               </p>
 
+              {/* Formspree Form */}
               <form
                 action="https://formspree.io/f/mwpnerkk"
                 method="POST"
                 className="flex flex-col gap-4"
+                onSubmit={() => setIsSubmitted(true)}
               >
                 <input
                   type="text"
@@ -158,6 +161,14 @@ const Resume = () => {
                   Submit Request
                 </button>
               </form>
+
+              {/* Success Message */}
+              {isSubmitted && (
+                <p className="mt-4 text-green-600 font-semibold">
+                  ✅ Request sent successfully! You’ll receive an approval link
+                  if accepted.
+                </p>
+              )}
             </motion.div>
           </motion.div>
         )}
