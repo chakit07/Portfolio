@@ -4,22 +4,47 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const experiences = [
   {
-    year: "2024 - Present",
-    role: "Full Stack Developer (Internship)",
+    year: "August 2025 - Present",
+    role: "Project Leader - AI Powered Carbon Emission Tracker",
     details:
-      "Worked on React.js, Node.js, and MongoDB for building scalable web apps.",
+      "Leading the development of a major college project focused on tracking and reducing carbon footprints using AI-powered insights.",
+    address: "College Major Project",
+    status: "Under Development",
+  },
+
+  {
+    year: "June 2025 - Aug 2025 (3 months)",
+    role: "Full Stack Developer Intern - iCtrlBiz Consulting Pvt Ltd",
+    details:
+      "Built an AI-powered Expense Tracker that automatically categorizes expenses, provides spending insights, and helps users manage budgets efficiently.",
+    address: "Noida, Uttar Pradesh, India",
+    certificate:
+      "https://media.licdn.com/dms/image/v2/D562DAQEG8osooQsihA/profile-treasury-image-shrink_1280_1280/B56Zjp4C8JHAAQ-/0/1756270446623?e=1757066400&v=beta&t=VZstUCWVEpEo09QOHEZcdXtOuno43OlgZbHlnr1JrAY",
+  },
+  {
+    year: "Sept 2024 - Oct 2024 (2 months)",
+    role: "Intern - Future Intern",
+    details: "Contributed to Java development tasks as part of a small ",
+    address: "Ghaziabad, Uttar Pradesh, India",
+    certificate:
+      "https://media.licdn.com/dms/image/v2/D562DAQHOiMF62Iy9ow/profile-treasury-image-shrink_800_800/B56Zjp5_ZpG0AY-/0/1756270951265?e=1757066400&v=beta&t=pQHCYdFdZiJMIN9iST1rG2y-BVyZX-M2OzCfb4mJY1o",
+  },
+  {
+    year: "Jan 2024 - Mar 2024 (3 months)",
+    role: "Technical Trainee - ShapeMySkills Pvt. Ltd.",
+    details:
+      "Successfully completed technical training in Data Science with Python, mastering data manipulation, analysis and visualization techniques to drive informed decision-making.",
+    address: "Ghaziabad, Uttar Pradesh, India",
+    certificate: "Available Soon",
   },
   {
     year: "2023",
-    role: "Frontend Developer (Freelance)",
+    role: "Research Collaborator",
     details:
-      "Designed responsive UI with React + Tailwind CSS for client projects.",
-  },
-  {
-    year: "2022",
-    role: "AI Project Contributor",
-    details:
-      "Integrated AI APIs (OpenAI, TensorFlow) into personal and academic projects.",
+      "Worked in a team to publish a research paper, contributing to literature review, methodology design, and data analysis.",
+    address: "College Research Project",
+    certificate:
+      "https://media.licdn.com/dms/image/v2/D4D22AQEfTpQcqUhXIw/feedshare-shrink_800/feedshare-shrink_800/0/1695233226359?e=1759363200&v=beta&t=3B8IO3cFEP1zsx9LtF9Hf7HXu9SRD18l3yrg0IOBL-E",
   },
 ];
 
@@ -74,7 +99,24 @@ const Experience = () => {
 
                 <h4 className="text-lg font-semibold text-white">{exp.role}</h4>
                 <p className="text-gray-300">{exp.details}</p>
+                <p className="text-gray-400 text-sm italic">{exp.address}</p>
                 <span className="text-sm text-gray-500">{exp.year}</span>
+
+                {/* Certificate space */}
+                {exp.certificate ? (
+                  <a
+                    href={exp.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-2 text-sm text-pink-400 hover:underline"
+                  >
+                    📄 View Certificate
+                  </a>
+                ) : (
+                  <div className="mt-2 w-40 h-8 bg-gray-800/60 border border-gray-700 rounded-md flex items-center justify-center text-gray-500 text-xs italic">
+                    Certificate Not Added
+                  </div>
+                )}
               </motion.div>
             ))}
           </motion.div>

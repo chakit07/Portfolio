@@ -1,6 +1,26 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Contact = () => {
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const res = await fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { Accept: "application/json" },
+    });
+
+    if (res.ok) {
+      setStatus("✅ Thanks! Your message has been sent.");
+      form.reset();
+    } else {
+      setStatus("❌ Oops! Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <section
       id="contact"
@@ -19,6 +39,7 @@ const Contact = () => {
 
       {/* Contact Form */}
       <motion.form
+        onSubmit={handleSubmit}
         action="https://formspree.io/f/mwpnerkk"
         method="POST"
         className="bg-white/40 dark:bg-gray-800/40 backdrop-blur-lg 
@@ -67,6 +88,13 @@ const Contact = () => {
         >
           Send Message
         </button>
+
+        {/* ✅ Show Success / Error Message */}
+        {status && (
+          <p className="text-center mt-4 text-sm text-green-500 dark:text-green-400">
+            {status}
+          </p>
+        )}
       </motion.form>
     </section>
   );

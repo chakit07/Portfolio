@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
-import Resume from "./components/Resume";
 import Skills from "./components/Skills";
 import SectionWrapper from "./components/Wrapper/SectionWrapper";
 
@@ -40,10 +39,6 @@ function App() {
 
       <SectionWrapper id="projects">
         <Projects />
-      </SectionWrapper>
-
-      <SectionWrapper id="resume">
-        <Resume />
       </SectionWrapper>
 
       <SectionWrapper id="contact">

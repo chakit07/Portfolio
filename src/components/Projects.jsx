@@ -8,25 +8,24 @@ const projectsData = [
     title: "Myntra Clone",
     category: "Web",
     description:
-      "A full-stack e-commerce clone of Myntra with modern UI, authentication, and payment integration.",
+      "A full-stack e-commerce clone of Myntra with modern UI, responsive design, and payment integration.",
     details:
-      "A Myntra-inspired e-commerce platform replicating the shopping experience with product filters, cart, and secure checkout. Built using React, Node.js, Express, and Stripe with a fully responsive design.",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
+      "  Myntra-inspired e-commerce platform replicating the shopping experience with product filters, cart, and secure checkout. Built using React, Node.js, Express, and Stripe with a fully responsive design.",
+    techStack: ["React", "Node.js", "Express", "Stripe"],
     github: "https://github.com/chakit07/Myntra-Clone-Frontend.git",
     live: "https://myntra-clone-frontend-teal.vercel.app/",
-    image:
-      "https://camo.githubusercontent.com/48c8050fc401c81534866c5efbc8fd5d10791cec309085df791c718da0ad4f61/68747470733a2f2f313030306c6f676f732e6e65742f77702d636f6e74656e742f75706c6f6164732f323032322f30382f4d796e7472612d4c6f676f2d373638783433322e706e67",
+    image: "/Projects_Image/Myntra_Clone.png",
   },
   {
-    title: "AI Expense Tracker",
+    title: "AI Expense Tracker (Available Soon)",
     category: "AI/ML",
     description:
       "Expense tracker with AI-powered insights and prediction features.",
     details:
-      "Tracks user expenses and provides AI-driven predictions of future spending patterns. Built using Python, TensorFlow, React, and Node.js. Features authentication and data visualization.",
-    techStack: ["React", "Node.js", "MongoDB", "Python", "TensorFlow"],
-    github: "https://github.com/yourusername/expense-tracker",
-    live: "https://expense-ai-demo.com",
+      " Tracks user expenses and provides AI-driven categorization and insights. Built using React, Node.js, and integrated with Gemini API and OpenAI API for intelligent analysis.",
+    techStack: ["React", "Node.js", "Gemini API", "OpenAI API"],
+    github: "Available Soon",
+    live: "Available Soon",
     image:
       "https://i0.wp.com/www.planetcrust.com/wp-content/uploads/2023/11/228.-Mastering-Your-Finances-Building-an-AI-Powered-Expense-Tracking-App-01.png?fit=1030%2C580&ssl=1",
   },
@@ -49,7 +48,7 @@ const projectsData = [
     description:
       "A simple yet functional calculator built with React for performing basic arithmetic operations.",
     details:
-      "Interactive calculator with a clean UI, responsive design, and support for basic operations like addition, subtraction, multiplication, and division. Built with React and styled using plain CSS for custom design.",
+      " Interactive calculator with a clean UI, responsive design, and support for basic operations like addition, subtraction, multiplication, and division. Built with React and styled using plain CSS for custom design.",
     techStack: ["React", "CSS"],
     github: "https://github.com/chakit07/React-Calculator.git",
     live: "https://react-calculator-three-wheat-83.vercel.app/",
@@ -140,6 +139,7 @@ const Projects = () => {
       </div>
 
       {/* Project Cards */}
+      {/* Project Cards */}
       <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-6xl w-full">
         <AnimatePresence>
           {filteredProjects.map((project, i) => (
@@ -147,11 +147,11 @@ const Projects = () => {
               key={project.title}
               layout
               className="rounded-2xl shadow-lg border border-white/20
-                         overflow-hidden flex flex-col cursor-pointer
-                         bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50
-                         dark:from-gray-800/70 dark:via-gray-700/50 dark:to-gray-900/80
-                         transition-all duration-500
-                         hover:scale-105"
+                   overflow-hidden flex flex-col cursor-pointer
+                   bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50
+                   dark:from-gray-800/70 dark:via-gray-700/50 dark:to-gray-900/80
+                   transition-all duration-500
+                   hover:scale-105"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
@@ -173,6 +173,24 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
+
+          {/* Extra Placeholder Project Card */}
+          <motion.div
+            layout
+            className="rounded-2xl shadow-lg border border-dashed border-pink-400
+                 flex items-center justify-center text-center p-6
+                 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50
+                 dark:from-gray-800/40 dark:via-gray-700/30 dark:to-gray-900/50
+                 transition-all duration-500"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-lg font-semibold text-pink-500 dark:text-pink-300">
+              ✨ Many More Attractive Projects Coming Soon...
+            </p>
+          </motion.div>
         </AnimatePresence>
       </div>
 

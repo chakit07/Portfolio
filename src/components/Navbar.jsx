@@ -14,7 +14,6 @@ const Navbar = ({ theme, setTheme }) => {
     { id: "about", text: "About" },
     { id: "skills", text: "Skills" },
     { id: "projects", text: "Projects" },
-    { id: "resume", text: "Resume" },
     { id: "contact", text: "Contact" },
   ];
 

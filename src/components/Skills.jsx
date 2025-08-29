@@ -1,25 +1,58 @@
 import { motion } from "framer-motion";
 import {
+  FaCss3Alt,
   FaDatabase,
   FaGitAlt,
+  FaGithub,
+  FaHtml5,
+  FaJava,
+  FaJsSquare,
   FaNodeJs,
   FaPython,
   FaReact,
+  FaServer,
 } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiTensorflow } from "react-icons/si";
+import {
+  SiMongodb,
+  SiRedux,
+  SiRender,
+  SiTableau,
+  SiTailwindcss,
+  SiVercel,
+} from "react-icons/si";
 
 const skills = [
   {
     category: "Frontend",
     items: [
       {
+        name: "HTML",
+        level: 95,
+        icon: <FaHtml5 className="text-orange-500" />,
+      },
+      {
+        name: "CSS",
+        level: 80,
+        icon: <FaCss3Alt className="text-blue-500" />,
+      },
+      {
+        name: "JavaScript",
+        level: 75,
+        icon: <FaJsSquare className="text-yellow-400" />,
+      },
+      {
         name: "React.js",
-        level: 90,
+        level: 85,
         icon: <FaReact className="text-cyan-500" />,
       },
       {
+        name: "Redux.js",
+        level: 65,
+        icon: <SiRedux className="text-purple-600" />,
+      },
+      {
         name: "Tailwind CSS",
-        level: 85,
+        level: 80,
         icon: <SiTailwindcss className="text-blue-400" />,
       },
     ],
@@ -33,29 +66,34 @@ const skills = [
         icon: <FaNodeJs className="text-green-500" />,
       },
       {
+        name: "Express.js",
+        level: 70,
+        icon: <FaServer className="text-purple-400" />,
+      },
+      {
         name: "MongoDB",
         level: 75,
         icon: <SiMongodb className="text-green-400" />,
       },
       {
         name: "SQL",
-        level: 70,
+        level: 50,
         icon: <FaDatabase className="text-purple-400" />,
       },
     ],
   },
   {
-    category: "AI / ML",
+    category: "Programming",
     items: [
       {
-        name: "Python",
+        name: "Java",
         level: 85,
-        icon: <FaPython className="text-yellow-400" />,
+        icon: <FaJava className="text-red-500" />,
       },
       {
-        name: "TensorFlow",
-        level: 65,
-        icon: <SiTensorflow className="text-orange-400" />,
+        name: "Python",
+        level: 45,
+        icon: <FaPython className="text-yellow-400" />,
       },
     ],
   },
@@ -63,6 +101,26 @@ const skills = [
     category: "Tools",
     items: [
       { name: "Git", level: 80, icon: <FaGitAlt className="text-red-400" /> },
+      {
+        name: "GitHub",
+        level: 80,
+        icon: <FaGithub className="text-gray-400" />,
+      },
+      {
+        name: "Vercel",
+        level: 75,
+        icon: <SiVercel className="text-black" />,
+      },
+      {
+        name: "Render",
+        level: 70,
+        icon: <SiRender className="text-indigo-400" />,
+      },
+      {
+        name: "Tableau",
+        level: 50,
+        icon: <SiTableau className="text-orange-500" />,
+      },
     ],
   },
 ];
@@ -98,9 +156,7 @@ const Skills = () => {
               className={`p-6 rounded-xl shadow-lg border border-white/20
                           hover:scale-105 transition-transform duration-300
                           ${
-                            // Light mode gradient
                             "bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 " +
-                            // Dark mode gradient
                             "dark:from-gray-800/70 dark:via-gray-700/60 dark:to-gray-900/80"
                           }`}
               initial={{ opacity: 0, y: 20 }}
