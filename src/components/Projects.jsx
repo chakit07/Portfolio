@@ -37,8 +37,8 @@ const projectsData = [
     details:
       "Responsive portfolio with dark mode, animations, and sections for skills, projects, and contact. Built with React, TailwindCSS, and Framer Motion.",
     techStack: ["React", "TailwindCSS", "Framer Motion"],
-    github: "https://github.com/yourusername/portfolio",
-    live: "https://portfolio-demo.com",
+    github: "https://github.com/chakit07/Portfolio.git",
+    live: "https://portfolio-vert-sigma-74.vercel.app/",
     image:
       "https://wiztoonz.com/wp-content/uploads/2022/04/Blog-Post-Portfolio-1170x658.jpg",
   },
