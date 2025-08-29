@@ -48,7 +48,7 @@ const Navbar = ({ theme, setTheme }) => {
                      bg-gradient-to-r from-blue-500 to-purple-600 
                      bg-clip-text text-transparent tracking-wide"
         >
-          Portfolio
+          Chakit's Portfolio
         </h1>
 
         {/* Desktop Menu */}
