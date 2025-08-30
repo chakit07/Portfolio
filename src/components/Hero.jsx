@@ -28,11 +28,12 @@ const Hero = () => {
     setSubmitStatus(null);
   };
 
+  const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const checkRes = await fetch(
-        `http://localhost:5000/request-status/${formData.email}`
+        `${API_BASE}/request-status/${formData.email}`
       );
       const checkData = await checkRes.json();
 
@@ -47,7 +48,7 @@ const Hero = () => {
         setSubmitStatus("success");
         setIsOpen(false);
       } else if (checkData.status === "none") {
-        const res = await fetch("http://localhost:5000/request-resume", {
+        const res = await fetch(`${API_BASE}/request-resume`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
@@ -73,9 +74,7 @@ const Hero = () => {
   useEffect(() => {
     const checkStatus = async () => {
       if (!formData.email) return;
-      const res = await fetch(
-        `http://localhost:5000/request-status/${formData.email}`
-      );
+      const res = await fetch(`${API_BASE}/request-status/${formData.email}`);
       const data = await res.json();
 
       if (data.status === "approved") {
@@ -188,7 +187,7 @@ const Hero = () => {
           <div className="flex items-center gap-4 mt-6 relative">
             {status === "approved" && requestId ? (
               <motion.a
-                href={`http://localhost:5000/download-resume/${requestId}`}
+                href={`${API_BASE}/download-resume/${requestId}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative"
