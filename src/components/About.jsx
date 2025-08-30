@@ -6,7 +6,7 @@ import SectionWrapper from "./Wrapper/SectionWrapper";
 const About = () => {
   return (
     <SectionWrapper id="about">
-      <section className="w-full min-h-screen flex items-center justify-center px-6 md:px-20 relative">
+      <section className="w-full min-h-screen flex items-center justify-center px-3 md:px-20 relative">
         <motion.div
           className="max-w-6xl w-full backdrop-blur-xl 
           bg-white/40 dark:bg-gray-800/30 
