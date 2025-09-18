@@ -17,8 +17,8 @@ const projectsData = [
     image: "/Projects_Image/Myntra_Clone.png",
   },
   {
-    title: "AI Expense Tracker (Available Soon)",
-    category: "AI/ML",
+    title: "Expense Tracker With Ai Insights",
+    category: "Web",
     description:
       "Expense tracker with AI-powered insights and prediction features.",
     details:
