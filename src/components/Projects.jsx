@@ -23,9 +23,9 @@ const projectsData = [
       "Expense tracker with AI-powered insights and prediction features.",
     details:
       " Tracks user expenses and provides AI-driven categorization and insights. Built using React, Node.js, and integrated with Gemini API and OpenAI API for intelligent analysis.",
-    techStack: ["React", "Node.js", "Gemini API", "OpenAI API"],
-    github: "Available Soon",
-    live: "Available Soon",
+    techStack: ["React", "Node.js", "Gemini API", "FireBase Auth"],
+    github: "https://github.com/chakit07/Expense-Tracker-with-Ai-Insights.git",
+    live: "https://expense-tracker-with-ai-insights-fr.vercel.app/",
     image:
       "https://i0.wp.com/www.planetcrust.com/wp-content/uploads/2023/11/228.-Mastering-Your-Finances-Building-an-AI-Powered-Expense-Tracking-App-01.png?fit=1030%2C580&ssl=1",
   },
