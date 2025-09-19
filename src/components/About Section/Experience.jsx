@@ -19,7 +19,7 @@ const experiences = [
       "Built an AI-powered Expense Tracker that automatically categorizes expenses, provides spending insights, and helps users manage budgets efficiently.",
     address: "Noida, Uttar Pradesh, India",
     certificate:
-      "https://media.licdn.com/dms/image/v2/D562DAQEG8osooQsihA/profile-treasury-image-shrink_1280_1280/B56Zjp4C8JHAAQ-/0/1756270446623?e=1757066400&v=beta&t=VZstUCWVEpEo09QOHEZcdXtOuno43OlgZbHlnr1JrAY",
+      "https://media.licdn.com/dms/image/v2/D5622AQHzSDkteObQMQ/feedshare-shrink_2048_1536/B56Zjp5M.EIAA8-/0/1756270745153?e=1761177600&v=beta&t=kVXbhoTZVXBIp2YH34mn9hVaoFjD2tiaCvCpJjnDxcw",
   },
   {
     year: "Sept 2024 - Oct 2024 (2 months)",
@@ -27,7 +27,7 @@ const experiences = [
     details: "Contributed to Java development tasks as part of a small ",
     address: "Ghaziabad, Uttar Pradesh, India",
     certificate:
-      "https://media.licdn.com/dms/image/v2/D562DAQHOiMF62Iy9ow/profile-treasury-image-shrink_800_800/B56Zjp5_ZpG0AY-/0/1756270951265?e=1757066400&v=beta&t=pQHCYdFdZiJMIN9iST1rG2y-BVyZX-M2OzCfb4mJY1o",
+      "https://media.licdn.com/dms/image/v2/D562DAQHOiMF62Iy9ow/profile-treasury-image-shrink_800_800/B56Zjp5_ZpG0AY-/0/1756270951265?e=1758913200&v=beta&t=zeyvRv7naQch8M7yUTQJGyHLK_6njOEjo-vsD1EwQeE",
   },
   {
     year: "Jan 2024 - Mar 2024 (3 months)",
@@ -44,7 +44,7 @@ const experiences = [
       "Worked in a team to publish a research paper, contributing to literature review, methodology design, and data analysis.",
     address: "College Research Project",
     certificate:
-      "https://media.licdn.com/dms/image/v2/D4D22AQEfTpQcqUhXIw/feedshare-shrink_800/feedshare-shrink_800/0/1695233226359?e=1759363200&v=beta&t=3B8IO3cFEP1zsx9LtF9Hf7HXu9SRD18l3yrg0IOBL-E",
+      "https://media.licdn.com/dms/image/v2/D4D22AQEfTpQcqUhXIw/feedshare-shrink_800/feedshare-shrink_800/0/1695233226359?e=1761177600&v=beta&t=5Z3-l5U87_oNvi7U9Y1JUR635NEk_jzD07E27EHGudI",
   },
 ];
 
